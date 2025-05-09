@@ -27,4 +27,4 @@ mount --bind "$ROOT_MNT/$SUBDIR" "$TARGET"
 log "[wait‑for‑nfs] bind‑mounted subdir $SUBDIR → $TARGET"
 
 # ── 3. start Frigate ──────────────────────────────────────────────
-exec /entrypoint.sh "$@"
+exec "$@"
