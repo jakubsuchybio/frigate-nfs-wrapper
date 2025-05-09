@@ -13,7 +13,7 @@ log(){ echo "$(date -u +'%Y-%m-%dT%H:%M:%SZ') $*"; }
 
 ROOT_MNT=/mnt/nfsroot          # temp mount‑point for the export root
 mkdir -p "$ROOT_MNT" "$TARGET"
-
+log "[wait‑for‑nfs] starting to mount NFS share $SERVER:$EXPORT_ROOT"
 # ── 1. wait for NAS then mount the export root ────────────────────
 until mount -t nfs -o "$OPTS" "$SERVER:$EXPORT_ROOT" "$ROOT_MNT"; do
   log "[wait‑for‑nfs] mount root failed → retry in 5 s"
