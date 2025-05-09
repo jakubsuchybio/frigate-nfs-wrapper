@@ -27,4 +27,8 @@ mount --bind "$ROOT_MNT/$SUBDIR" "$TARGET"
 log "[wait‑for‑nfs] bind‑mounted subdir $SUBDIR → $TARGET"
 
 # ─── 3. start Frigate ─────────────────────────────────────────────
-exec /init
+if [ "$#" -gt 0 ]; then   # Docker passed a CMD
+    exec "$@"
+else                      # fall back to the image default
+    exec /init
+fi
