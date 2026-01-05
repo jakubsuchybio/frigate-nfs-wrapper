@@ -1,5 +1,5 @@
 # Use the same Frigate tag you want to run
-FROM ghcr.io/blakeblackshear/frigate:0.16.2
+FROM ghcr.io/blakeblackshear/frigate:0.16.3
 
 # ---- install NFS client + helpers ---------------------------------
 # Debian/Ubuntu base ⇒ apt; package name is nfs-common
