@@ -1,7 +1,6 @@
 # Every push to main builds the image and pushes :latest and :<sha> to GitHub Container
-# Registry as a PRIVATE package (ghcr.io/jakubsuchybio/frigate-nfs-wrapper). No secrets: the
-# workflow's own GITHUB_TOKEN may write this repo's packages. The Frigate VM pulls after a
-# one-time `docker login ghcr.io` with a read:packages token.
+# Registry as ghcr.io/jakubsuchybio/frigate-nfs-wrapper (public, like this repo). No secrets:
+# the workflow's own GITHUB_TOKEN may write this repo's packages.
 name: Build & Push Frigate-NFS to GHCR
 
 on:
